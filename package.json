@@ -5,7 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!./node_modules/",
+      "!src/.internal/*"
+    ]
   },
   "author": "",
   "license": "MIT",
@@ -13,5 +20,8 @@
     "jest": "^29.3.1",
     "jest-chain": "^1.1.6",
     "jest-extended": "^3.1.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.1"
   }
 }
