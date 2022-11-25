@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "lint": "eslint test/** --max-warnings=0"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!./node_modules/",
       "!src/.internal/*"
+    ],
+    "setupFilesAfterEnv": [
+      "./testSetup.js"
     ]
   },
   "author": "",
@@ -22,6 +25,11 @@
     "jest-extended": "^3.1.0"
   },
   "devDependencies": {
-    "coveralls": "^3.1.1"
+    "@babel/preset-env": "^7.20.2",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^27.1.6",
+    "prettier": "^2.8.0"
   }
 }
