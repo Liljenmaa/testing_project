@@ -11,6 +11,9 @@
       "src/**/*.{js,jsx,ts,tsx}",
       "!./node_modules/",
       "!src/.internal/*"
+    ],
+    "setupFilesAfterEnv": [
+      "./testSetup.js"
     ]
   },
   "author": "",
