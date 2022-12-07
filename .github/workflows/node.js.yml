@@ -31,6 +31,8 @@ jobs:
       - run: npm test
 
       - name: Coveralls
+        # run the step even if tests fail
+        if: success() || failure()
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
