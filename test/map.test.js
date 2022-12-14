@@ -25,7 +25,7 @@ describe('map', () => {
   });
   describe('handles exceptions', () => {
     it("throws TypeError when supplied with an object with attribute 'length' defined", () => {
-      expect(map({ length: 100 }, square)).toThrow(TypeError);
+      expect(() => map({ length: 100 }, square)).toThrow(TypeError);
     });
     it('throws TypeError when supplied with a non-array', () => {
       expect(() => map(true, square)).toThrow(TypeError);

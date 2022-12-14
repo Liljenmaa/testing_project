@@ -65,7 +65,7 @@ describe('toNumber', () => {
       expect(toNumber('0xFA')).toBe(250);
     });
     it('function that returns a number', () => {
-      expect(() => 26).toBe(26);
+      expect(toNumber(() => 26)).toBe(26);
     });
     it('positive stringified number with trailing spaces', () => {
       expect(toNumber('  1  ')).toBe(1);
@@ -112,7 +112,7 @@ describe('toNumber', () => {
       expect(toNumber(obj)).toBe(NaN);
     });
     it("function that doesn't return a number", () => {
-      expect(() => 'Test String').toBe(NaN);
+      expect(toNumber(() => 'Test String')).toBe(NaN);
     });
     it('null', () => {
       expect(toNumber(null)).toBe(NaN);
